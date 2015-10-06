@@ -72,7 +72,14 @@ module.exports = (robot) ->
     envelope = room: "#weekly_exam"
     robot.send envelope, "<!channel> おまいら、提出は今日中やで"
   )
-
+  remind_webook1 = new cronJob('00 00 11 * * 2', () =>
+    envelope = room: "#we-book"
+    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
+  )
+  remind_webook2 = new cronJob('00 00 11 * * 4', () =>
+    envelope = room: "#we-book"
+    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
+  )
 
 
   btimer1_1.start()
@@ -87,6 +94,8 @@ module.exports = (robot) ->
   close_web_chat.start()
   remind_exam1.start()
   remind_exam2.start()
+  remind_webook1.start()
+  remind_webook2.start()
   # robot.respond /PING$/i, (msg) ->
   #   msg.send "@maikishinbo !!!"
 
