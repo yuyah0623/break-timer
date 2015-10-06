@@ -8,9 +8,21 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+cronJob = require('cron').CronJob
+
+module.exports = (robot) ->
+  btimer1 = new cronJob('10 * * * * 0-6', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "@maikishinbo ブレイクタイム *30分前ですよ！*"
+  )
+  # robot.respond /PING$/i, (msg) ->
+  #   msg.send "@maikishinbo !!!"
+
+  btimer1.start()
 # module.exports = (robot) ->
 #   robot.respond /PING$/i, (msg) ->
 #     msg.send "@maikishinbo!!!"
+
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
