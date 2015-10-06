@@ -11,91 +11,95 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
+  btimer1_1 = new cronJob('00 14 1 * * 0-6', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
+  )
   # 15:30ブレイクタイム
-  btimer1_1 = new cronJob('00 00 15 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
-  )
-  btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
-  )
-  btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
-  )
-  btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
-  )
+  # btimer1_1 = new cronJob('00 00 15 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
+  # )
+  # btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
+  # )
+  # btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
+  # )
+  # btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
+  # )
 
-  # 18:30ブレイクタイム
-  btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
-  )
-  btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
-  )
-  btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
-  )
-  btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
-  )
-  # 終業
-  end_work = new cronJob('00 00 23 * * 0-6', () =>
-    envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> みんな、おつかれさま :heartbeat: \n https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
-  )
+  # # 18:30ブレイクタイム
+  # btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
+  # )
+  # btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
+  # )
+  # btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
+  # )
+  # btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
+  # )
+  # # 終業
+  # end_work = new cronJob('00 00 23 * * 0-6', () =>
+  #   envelope = room: "#mentor-contact"
+  #   robot.send envelope, "<!here> みんな、おつかれさま :heartbeat: \n https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
+  # )
 
-  # Close Channel
-  close_ios_chat = new cronJob('00 00 23 * * 0-6', () =>
-    envelope = room: "#_ios_online_support"
-    robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:ponchan_bob::two_hearts:"
-  )
+  # # Close Channel
+  # close_ios_chat = new cronJob('00 00 23 * * 0-6', () =>
+  #   envelope = room: "#_ios_online_support"
+  #   robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:ponchan_bob::two_hearts:"
+  # )
 
-  close_web_chat = new cronJob('00 00 23 * * 0-6', () =>
-    envelope = room: "#_web_online_support"
-    robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
-  )
+  # close_web_chat = new cronJob('00 00 23 * * 0-6', () =>
+  #   envelope = room: "#_web_online_support"
+  #   robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
+  # )
 
-  remind_exam1 = new cronJob('00 00 11 * * 2', () =>
-    envelope = room: "#weekly_exam"
-    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
-  )
+  # remind_exam1 = new cronJob('00 00 11 * * 2', () =>
+  #   envelope = room: "#weekly_exam"
+  #   robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
+  # )
 
-  remind_exam2 = new cronJob('00 00 11 * * 4', () =>
-    envelope = room: "#weekly_exam"
-    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
-  )
-  remind_webook1 = new cronJob('00 00 11 * * 2', () =>
-    envelope = room: "#we-book"
-    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
-  )
-  remind_webook2 = new cronJob('00 00 11 * * 4', () =>
-    envelope = room: "#we-book"
-    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
-  )
+  # remind_exam2 = new cronJob('00 00 11 * * 4', () =>
+  #   envelope = room: "#weekly_exam"
+  #   robot.send envelope, "<!channel> おまいら、提出は今日中やで"
+  # )
+  # remind_webook1 = new cronJob('00 00 11 * * 2', () =>
+  #   envelope = room: "#we-book"
+  #   robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
+  # )
+  # remind_webook2 = new cronJob('00 00 11 * * 4', () =>
+  #   envelope = room: "#we-book"
+  #   robot.send envelope, "<!channel> おまいら、提出は今日中やで"
+  # )
 
 
   btimer1_1.start()
-  btimer1_2.start()
-  btimer1_3.start()
-  btimer1_4.start()
-  btimer2_1.start()
-  btimer2_2.start()
-  btimer2_3.start()
-  btimer2_4.start()
-  close_ios_chat.start()
-  close_web_chat.start()
-  remind_exam1.start()
-  remind_exam2.start()
-  remind_webook1.start()
-  remind_webook2.start()
+  # btimer1_2.start()
+  # btimer1_3.start()
+  # btimer1_4.start()
+  # btimer2_1.start()
+  # btimer2_2.start()
+  # btimer2_3.start()
+  # btimer2_4.start()
+  # close_ios_chat.start()
+  # close_web_chat.start()
+  # remind_exam1.start()
+  # remind_exam2.start()
+  # remind_webook1.start()
+  # remind_webook2.start()
   # robot.respond /PING$/i, (msg) ->
   #   msg.send "@maikishinbo !!!"
 
