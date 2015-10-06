@@ -12,44 +12,44 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
   # 15:30ブレイクタイム
-  btimer1_1 = new cronJob('00 34 2 * * 0-6', () =>
+  btimer1_1 = new cronJob('00 00 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム\n*30分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*30分前ですよ！*"
   )
   btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*15分前ですよ！*"
   )
   btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*5分前ですよ！*"
   )
   btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
+    robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:*\nhttp://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
   )
 
   # 18:30ブレイクタイム
   btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*30分前ですよ！*"
   )
   btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*15分前ですよ！*"
   )
   btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム*5分前ですよ！*"
   )
   btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:* \n http://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
+    robot.send envelope, ":sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:\nhttp://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
   )
   # 終業
   end_work = new cronJob('00 55 22 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> みんな、おつかれさま :heartbeat: \n https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
+    robot.send envelope, "<!here> みんな、おつかれさま :heartbeat:\nhttps://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
   )
 
   # Close Channel
@@ -83,17 +83,17 @@ module.exports = (robot) ->
 
 
   btimer1_1.start()
-  # btimer1_2.start()
-  # btimer1_3.start()
-  # btimer1_4.start()
-  # btimer2_1.start()
-  # btimer2_2.start()
-  # btimer2_3.start()
-  # btimer2_4.start()
-  # remind_exam1.start()
-  # remind_exam2.start()
-  # remind_webook1.start()
-  # remind_webook2.start()
+  btimer1_2.start()
+  btimer1_3.start()
+  btimer1_4.start()
+  btimer2_1.start()
+  btimer2_2.start()
+  btimer2_3.start()
+  btimer2_4.start()
+  remind_exam1.start()
+  remind_exam2.start()
+  remind_webook1.start()
+  remind_webook2.start()
   # robot.respond /PING$/i, (msg) ->
   #   msg.send "@maikishinbo !!!"
 
