@@ -14,15 +14,15 @@ module.exports = (robot) ->
   # 15:30ブレイクタイム
   btimer1_1 = new cronJob('00 00 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here ブレイクタイム *30分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
   )
   btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here ブレイクタイム *15分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
   )
   btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here ブレイクタイム *5分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
   )
   btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
@@ -31,16 +31,16 @@ module.exports = (robot) ->
 
   # 18:30ブレイクタイム
   btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
-  envelope = room: "#mentor-contact"
-  robot.send envelope, "@here ブレイクタイム *30分前ですよ！*"
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！*"
   )
   btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here ブレイクタイム *15分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！*"
   )
   btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here ブレイクタイム *5分前ですよ！*"
+    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！*"
   )
   btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
@@ -49,7 +49,7 @@ module.exports = (robot) ->
   # 終業
   end_work = new cronJob('00 00 23 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "@here みんな、おつかれさま :heartbeat: \n https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
+    robot.send envelope, "<!here> みんな、おつかれさま :heartbeat: \n https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
   )
 
   # Close Channel
@@ -59,18 +59,18 @@ module.exports = (robot) ->
   )
 
   close_web_chat = new cronJob('00 00 23 * * 0-6', () =>
-  envelope = room: "#_web_online_support"
-  robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
+    envelope = room: "#_web_online_support"
+    robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
   )
 
   remind_exam1 = new cronJob('00 00 11 * * 2', () =>
-  envelope = room: "#weekly_exam"
-  robot.send envelope, "@channel そろそろやり始めんとヤバイんとちゃうか"
+    envelope = room: "#weekly_exam"
+    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
   )
 
   remind_exam2 = new cronJob('00 00 11 * * 4', () =>
-  envelope = room: "#weekly_exam"
-  robot.send envelope, "@channel おまいら、提出は今日中やで"
+    envelope = room: "#weekly_exam"
+    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
   )
 
 
