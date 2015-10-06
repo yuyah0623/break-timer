@@ -1,0 +1,15 @@
+# Description:
+#   Utility commands surrounding Hubot uptime.
+#
+# Commands:
+#   cron configs
+#
+
+cronJob = require('cron').CronJob
+
+module.exports = (robot) ->
+  cronTest = new cronJob('0 57 16 * * 1', () =>
+    envelope = room: "#roomname"
+    robot.send envelope, "ここにメッセージを突っ込みます。"
+  )
+  cronTest.start()
