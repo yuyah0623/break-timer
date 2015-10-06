@@ -11,7 +11,7 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  btimer1_1 = new cronJob('00 40 0 * * 0-6', () =>
+  btimer1_1 = new cronJob('00 56 1 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!yuya-hirata> ブレイクタイム *30分前ですよ！*"
   )
