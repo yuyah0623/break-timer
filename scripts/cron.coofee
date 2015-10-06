@@ -8,8 +8,20 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  cronTest = new cronJob('0 57 16 * * 1', () =>
-    envelope = room: "#roomname"
-    robot.send envelope, "ここにメッセージを突っ込みます。"
+  btimer1 = new cronJob('10 * * * 1-7', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "@maikishinbo ブレイクタイム *30分前ですよ！*"
   )
-  cronTest.start()
+  btimer2 = new cronJob('0 0 15 * * 1-7', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "#here ブレイクタイム *30分前ですよ！*"
+  )
+  btimer3 = new cronJob('0 0 15 * * 1-7', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "#here ブレイクタイム *30分前ですよ！*"
+  )
+  btimer4 = new cronJob('0 0 15 * * 1-7', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "#here ブレイクタイム *30分前ですよ！*"
+  )
+  btimer1.start()
