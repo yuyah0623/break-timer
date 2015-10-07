@@ -52,7 +52,7 @@ module.exports = (robot) ->
     robot.send envelope, "<!here> *蛍の光流してください٩(๑′∀ ‵๑)۶•*¨*•.¸¸♪*\nhttp://2.bp.blogspot.com/-hqIThX2BTI4/UAomQKywmHI/AAAAAAAAEAc/Gw9txocS6yI/s1600/%E3%83%9B%E3%82%BF%E3%83%AB%E3%83%8E%E3%83%92%E3%82%AB%E3%83%AA.jpg"
   )
   # 終業
-  end_work = new cronJob('00 5 23 * * 0-6', () =>
+  end_work = new cronJob('00 00 23 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\nhttps://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
   )
