@@ -18,11 +18,11 @@ module.exports = (robot) ->
   )
   btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！:heartbeat:*"
+    robot.send envelope, "<!here> ブレイクタイム *15分前だよ！:heartbeat:*"
   )
   btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！:heartbeat:*"
+    robot.send envelope, "<!here> ブレイクタイム *5分前だよ！:heartbeat:*"
   )
   btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
@@ -32,15 +32,15 @@ module.exports = (robot) ->
   # 18:30ブレイクタイム
   btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *30分前ですよ！:heartbeat:*"
+    robot.send envelope, "<!here> ブレイクタイム *30分前だよ！:heartbeat:*"
   )
   btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *15分前ですよ！:heartbeat:*"
+    robot.send envelope, "<!here> ブレイクタイム *15分前だよ！:heartbeat:*"
   )
   btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> ブレイクタイム *5分前ですよ！:heartbeat:*"
+    robot.send envelope, "<!here> ブレイクタイム *5分前だよ！:heartbeat:*"
   )
   btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
     envelope = room: "#mentor-contact"
