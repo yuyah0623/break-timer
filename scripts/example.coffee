@@ -87,7 +87,11 @@ module.exports = (robot) ->
   )
   robot.hear /done$|準備した/i, (msg) ->
     username = msg.message.user.name
-    msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
+    username = "joji-sekiya"
+    if username == "joji-sekiya"
+      msg.send "だまれよフィッシュ！魚でも釣ってろ！"
+    else
+      msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
 
 
   btimer1_1.start()
