@@ -85,8 +85,10 @@ module.exports = (robot) ->
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> おまいら、提出は今日中やで"
   )
-  robot.respond /準備したよ/i, (msg) ->
-    msg.send "よく出来ました★仕事できる男の人ってカッコいい:heartbeat:"
+  robot.respond /done$/i, (msg) ->
+    username = msg.message.user.name
+    msg.send "ありがとう" + username + "くん！大好き！:heartbeat:"
+
 
   btimer1_1.start()
   btimer1_2.start()
