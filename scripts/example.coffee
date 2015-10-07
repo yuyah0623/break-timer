@@ -87,7 +87,6 @@ module.exports = (robot) ->
   )
   robot.hear /done$|準備した/i, (msg) ->
     username = msg.message.user.name
-    username = "joji-sekiya"
     if username == "joji-sekiya"
       msg.send "だまれよフィッシュ！魚でも釣ってろ！"
     else
