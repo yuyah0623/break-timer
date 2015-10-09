@@ -81,7 +81,11 @@ module.exports = (robot) ->
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 本、読んでますか？(๑•́ ₃ •̀๑)本を読む人って凄くカッコいい:heartbeat:"
   )
-  remind_webook2 = new cronJob('00 00 11 * * 5', () =>
+  remind_webook2 = new cronJob('00 30 23 * * 4', () =>
+    envelope = room: "#we-book"
+    robot.send envelope, "<!channel> 明日までだけど大丈夫かなぁ？楽しみー！:heartbeat:"
+  )
+  remind_webook3 = new cronJob('00 00 11 * * 5', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 皆の感想文楽しみだなぁ★今日までだからねっ！٩(๑`ȏ´๑)۶:heartbeat:"
   )
@@ -116,6 +120,7 @@ module.exports = (robot) ->
   remind_exam2.start()
   remind_webook1.start()
   remind_webook2.start()
+  remind_webook3.start()
   remind_music.start()
   end_work.start()
   # robot.respond /PING$/i, (msg) ->
