@@ -49,14 +49,14 @@ module.exports = (robot) ->
   # 蛍の光
   remind_music = new cronJob('00 55 22 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> *蛍の光流してください٩(๑′∀ ‵๑)۶•*¨*•.¸¸♪*\nhttp://2.bp.blogspot.com/-hqIThX2BTI4/UAomQKywmHI/AAAAAAAAEAc/Gw9txocS6yI/s1600/%E3%83%9B%E3%82%BF%E3%83%AB%E3%83%8E%E3%83%92%E3%82%AB%E3%83%AA.jpg"
+    robot.send envelope, "<!here> *蛍の光を流してください٩(๑′∀ ‵๑)۶•*¨*•.¸¸♪*\nhttp://2.bp.blogspot.com/-hqIThX2BTI4/UAomQKywmHI/AAAAAAAAEAc/Gw9txocS6yI/s1600/%E3%83%9B%E3%82%BF%E3%83%AB%E3%83%8E%E3%83%92%E3%82%AB%E3%83%AA.jpg"
   )
   # 終業
   end_work = new cronJob('00 00 23 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\nhttps://gyazo.com/4bee8893d4ccd5030eb641cd00103a53"
+    robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n良かったらまた指名してね♪http://i.imgur.com/qLdrXVj.jpg"
   )
-
+  # https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53
   # Close Channel
   # close_ios_chat = new cronJob('00 00 23 * * 0-6', () =>
   #   envelope = room: "#_ios_online_support"
@@ -70,20 +70,20 @@ module.exports = (robot) ->
 
   remind_exam1 = new cronJob('00 00 11 * * 2', () =>
     envelope = room: "#weekly_exam"
-    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
+    robot.send envelope, "<!channel> 皆さん順調ですか？(ू˃̣̣̣̣̣̣︿˂̣̣̣̣̣̣ ू)応援してるので頑張ってください:heartbeat:"
   )
 
   remind_exam2 = new cronJob('00 00 11 * * 4', () =>
     envelope = room: "#weekly_exam"
-    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
+    robot.send envelope, "<!channel> 提出は今日までですっっ！出さないと私が怒られちゃうの(ू˃̣̣̣̣̣̣︿˂̣̣̣̣̣̣ ू)"
   )
   remind_webook1 = new cronJob('00 00 11 * * 2', () =>
     envelope = room: "#we-book"
-    robot.send envelope, "<!channel> そろそろやり始めんとヤバイんとちゃうか"
+    robot.send envelope, "<!channel> 本、読んでますか？(๑•́ ₃ •̀๑)本を読む人って凄くカッコいい:heartbeat:"
   )
-  remind_webook2 = new cronJob('00 00 11 * * 4', () =>
+  remind_webook2 = new cronJob('00 00 11 * * 5', () =>
     envelope = room: "#we-book"
-    robot.send envelope, "<!channel> おまいら、提出は今日中やで"
+    robot.send envelope, "<!channel> 皆の感想文楽しみだなぁ★今日までだからねっ！٩(๑`ȏ´๑)۶:heartbeat:"
   )
   robot.hear /done$|準備した/i, (msg) ->
     username = msg.message.user.name
@@ -92,7 +92,7 @@ module.exports = (robot) ->
     else
       msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
 
-
+# 0月 1火 2水 3木 4金 5土 6日
   btimer1_1.start()
   btimer1_2.start()
   btimer1_3.start()
