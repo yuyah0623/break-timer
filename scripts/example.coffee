@@ -99,7 +99,9 @@ module.exports = (robot) ->
            'うざいくさいうるさい'
            'からの？'
            'ファーｗｗｗｗｗｗ',
-           'おう、ほんでほんで？']
+           'おう、ほんでほんで？',
+           'jojiくん、いつもごめんね。本当はあなたの事...',
+           'كان حبا من منذ فترة طويلة']
   robot.hear /done$|準備した/i, (msg) ->
     username = msg.message.user.name
     if username == "joji-sekiya"
