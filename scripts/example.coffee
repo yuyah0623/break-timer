@@ -85,10 +85,21 @@ module.exports = (robot) ->
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 皆の感想文楽しみだなぁ★今日までだからねっ！٩(๑`ȏ´๑)۶:heartbeat:"
   )
+  words = ['だまれよフィッシュ！魚でも釣ってろ！',
+           'お前に発言権はない',
+           'japanese please',
+           'その発言はクリミナルですね',
+           'ちょっと何言ってるか分からないです',
+           'は？',
+           'くさ',
+           'うざいくさいうるさい'
+           'からの？'
+           'ファーｗｗｗｗｗｗ',
+           'おう、ほんでほんで？']
   robot.hear /done$|準備した/i, (msg) ->
     username = msg.message.user.name
     if username == "joji-sekiya"
-      msg.send "だまれよフィッシュ！魚でも釣ってろ！"
+      msg.send msg.random words
     else
       msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
 
