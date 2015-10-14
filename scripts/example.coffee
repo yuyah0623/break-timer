@@ -54,7 +54,7 @@ module.exports = (robot) ->
   # 終業
   end_work = new cronJob('00 00 23 * * 0-6', () =>
     envelope = room: "#mentor-contact"
-    robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n良かったらまた指名してね♪http://i.imgur.com/qLdrXVj.jpg"
+    robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n明日からも皆で頑張ろう\nhttp://i.imgur.com/hwIXH65.jpg"
   )
   # https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53
   # Close Channel
@@ -110,20 +110,20 @@ module.exports = (robot) ->
       msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
 
 # 0月 1火 2水 3木 4金 5土 6日
-  btimer1_1.start()
-  btimer1_2.start()
-  btimer1_3.start()
-  btimer1_4.start()
-  btimer2_1.start()
-  btimer2_2.start()
-  btimer2_3.start()
-  btimer2_4.start()
+  # btimer1_1.start()
+  # btimer1_2.start()
+  # btimer1_3.start()
+  # btimer1_4.start()
+  # btimer2_1.start()
+  # btimer2_2.start()
+  # btimer2_3.start()
+  # btimer2_4.start()
   remind_exam1.start()
   remind_exam2.start()
   remind_webook1.start()
   remind_webook2.start()
   remind_webook3.start()
-  remind_music.start()
+  # remind_music.start()
   end_work.start()
   # robot.respond /PING$/i, (msg) ->
   #   msg.send "@maikishinbo !!!"
