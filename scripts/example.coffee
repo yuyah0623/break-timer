@@ -11,38 +11,38 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  # 15:30ブレイクタイム
-  btimer1_1 = new cronJob('00 00 15 * * 0-6', () =>
+  # 16:00ブレイクタイム
+  btimer1_1 = new cronJob('00 30 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *30分前だよ:heartbeat:*"
   )
-  btimer1_2 = new cronJob('00 15 15 * * 0-6', () =>
+  btimer1_2 = new cronJob('00 45 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *15分前だよ！:heartbeat:*"
   )
-  btimer1_3 = new cronJob('00 25 15 * * 0-6', () =>
+  btimer1_3 = new cronJob('00 55 15 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *5分前だよ！:heartbeat:*"
   )
-  btimer1_4 = new cronJob('00 30 15 * * 0-6', () =>
+  btimer1_4 = new cronJob('00 00 16 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "*:sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:*\nhttp://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
   )
 
-  # 18:30ブレイクタイム
-  btimer2_1 = new cronJob('00 00 18 * * 0-6', () =>
+  # 20:00ブレイクタイム
+  btimer2_1 = new cronJob('00 30 19 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *30分前だよ！:heartbeat:*"
   )
-  btimer2_2 = new cronJob('00 15 18 * * 0-6', () =>
+  btimer2_2 = new cronJob('00 45 19 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *15分前だよ！:heartbeat:*"
   )
-  btimer2_3 = new cronJob('00 25 18 * * 0-6', () =>
+  btimer2_3 = new cronJob('00 55 19 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> ブレイクタイム *5分前だよ！:heartbeat:*"
   )
-  btimer2_4 = new cronJob('00 30 18 * * 0-6', () =>
+  btimer2_4 = new cronJob('00 00 20 * * 0-6', () =>
     envelope = room: "#mentor-contact"
     robot.send envelope, ":sparkles::dancers::two_women_holding_hands::two_men_holding_hands::couple: *PARTY PEOPLE YEAH!!!!!* :couple: :two_men_holding_hands: :two_women_holding_hands: :dancers::sparkles:\nhttp://disc-j.net/wp-content/uploads/2014/09/ultrajafter3.jpg"
   )
@@ -68,27 +68,32 @@ module.exports = (robot) ->
   #   robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
   # )
 
-  remind_exam1 = new cronJob('00 00 11 * * 2', () =>
+  remind_exam1 = new cronJob('00 00 11 * * 3', () =>
     envelope = room: "#weekly_exam"
     robot.send envelope, "<!channel> 皆さん順調ですか？(ू˃̣̣̣̣̣̣︿˂̣̣̣̣̣̣ ू)応援してるので頑張ってください:heartbeat:"
   )
 
-  remind_exam2 = new cronJob('00 00 11 * * 4', () =>
+  remind_exam2 = new cronJob('00 00 11 * * 5', () =>
     envelope = room: "#weekly_exam"
     robot.send envelope, "<!channel> 提出は今日までですっっ！出さないと私が怒られちゃうの(ू˃̣̣̣̣̣̣︿˂̣̣̣̣̣̣ ू)"
   )
-  remind_webook1 = new cronJob('00 00 11 * * 2', () =>
+  remind_webook1 = new cronJob('00 00 11 * * 3', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 本、読んでますか？(๑•́ ₃ •̀๑)本を読む人って凄くカッコいい:heartbeat:"
   )
-  remind_webook2 = new cronJob('00 30 23 * * 4', () =>
+  remind_webook2 = new cronJob('00 30 23 * * 5', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 明日までだけど大丈夫かなぁ？楽しみー！:heartbeat:"
   )
-  remind_webook3 = new cronJob('00 00 11 * * 5', () =>
+  remind_webook3 = new cronJob('00 00 11 * * 6', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 皆の感想文楽しみだなぁ★今日までだからねっ！٩(๑`ȏ´๑)۶:heartbeat:"
   )
+  remind_mentor_fb = new cronJob('00 30 22 * * 0-6', () =>
+  envelope = room: "#mentor-contact"
+  robot.send envelope, "<!here> そういえば今日現場を見てこの人のココ良かったなぁとか気をつけた方がいいなぁって思った事とかない？\nもしあったら私に教えてくれると嬉しいなぁ:heartbeat:\n好きになっちゃうかも（笑）"
+  )
+
   words = ['だまれよフィッシュ！魚でも釣ってろ！',
            'お前に発言権はない',
            'japanese please',
@@ -98,7 +103,7 @@ module.exports = (robot) ->
            'くさ',
            'うざいくさいうるさい'
            'からの？'
-           'ファーｗｗｗｗｗｗ',
+           'ファーｗｗｗｗｗｗ(さんま)',
            'おう、ほんでほんで？',
            'jojiくん、いつもごめんね。本当はあなたの事...',
            'كان حبا من منذ فترة طويلة']
@@ -110,21 +115,22 @@ module.exports = (robot) ->
       msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
 
 # 0月 1火 2水 3木 4金 5土 6日
-  # btimer1_1.start()
-  # btimer1_2.start()
-  # btimer1_3.start()
-  # btimer1_4.start()
-  # btimer2_1.start()
-  # btimer2_2.start()
-  # btimer2_3.start()
-  # btimer2_4.start()
+  btimer1_1.start()
+  btimer1_2.start()
+  btimer1_3.start()
+  btimer1_4.start()
+  btimer2_1.start()
+  btimer2_2.start()
+  btimer2_3.start()
+  btimer2_4.start()
   remind_exam1.start()
   remind_exam2.start()
   remind_webook1.start()
   remind_webook2.start()
   remind_webook3.start()
-  # remind_music.start()
+  remind_music.start()
   end_work.start()
+  remind_mentor_fb.start()
   # robot.respond /PING$/i, (msg) ->
   #   msg.send "@maikishinbo !!!"
 
