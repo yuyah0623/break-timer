@@ -229,7 +229,7 @@ module.exports = (robot) ->
       msg.send "ありがとう" + username + "！大好き:heartbeat:"
 
   robot.respond /@/i, (msg) ->
-    username = msg.message.user.name
+    username = get_username(msg.message.user.name)
     msg.send "わー！ありがとうー♡" + username + "の事ちょっと気になってきたかも。。。"
 # 0月 1火 2水 3木 4金 5土 6日
   btimer1_1.start()
