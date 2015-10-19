@@ -10,6 +10,115 @@
 
 cronJob = require('cron').CronJob
 
+get_username = (name) ->
+  switch name
+    when "arakawa"
+      username = "しんたろーくん"
+    when "chidahiroki"
+      username = "ちだっち"
+    when "hiroaki.adachi"
+      username = "ひろあき兄貴"
+    when "honda-misaki"
+      username = "みーちゃん"
+    when "joji-sekiya"
+      username = "魚くん"
+    when "kaminoura-koki"
+      username = "こーき"
+    when "kana_saito"
+      username = "ちゃんかな"
+    when "katsutoshi.saino"
+      username = "かつとしくん"
+    when "kentarohorie"
+      username = "けんたろー"
+    when "koichiro-abe"
+      username = "えいちゃん"
+    when "kuboshizuma"
+      username = "しずま"
+    when "mako-yukinari"
+      username = "ゆきりん"
+    when "masashi.ogawa"
+      username = "まーくん"
+    when "naoki-shizuka"
+      username = "しずか"
+    when "naoki.mochizuki"
+      username = "もちぱいせん"
+    when "ryoji.saitou"
+      username = "りょーじくん"
+    when "sawadakota"
+      username = "こーた"
+    when "seo_kyohei"
+      username = "きょーへい"
+    when "shuichiro.inagaki"
+      username = "がっきーくん"
+    when "shutokondo"
+      username = "しゅーと兄貴"
+    when "tadachi-yuta"
+      username = "ゆーた"
+    when "takahashi-soya"
+      username = "そーちゃん"
+    when "takefumiyamamura"
+      username = "たけちゃん"
+    when "takumi-harigaya"
+      username = "たくみくん"
+    when "teru_tamura"
+      username = "TERUくん"
+    when "uchikawa"
+      username = "あいさん"
+    when "yasushi-imada"
+      username = "やっちゃん"
+    when "yoshihiro-nakamura"
+      username = "よっしーくん"
+    when "yoshihiro-sanada"
+      username = "さなでぃーくん"
+    when "yuki-ogawa"
+      username = "ゆうきくん"
+    when "yuya-hirata"
+      username = "ゆうやくん"
+    when "daitosaito"
+      username = "ベロチュー野郎"
+    when "hiroshi.miyazaki"
+      username = "ザキミヤさん"
+    when "hiroyuki-miyashita"
+      username = "ひろゆきくん"
+    when "inuisouichirou"
+      username = "そういちろーくん"
+    when "jun-yamada"
+      username = "じゅんじゅん"
+    when "kazumaabe"
+      username = "かずまくん"
+    when "keita-matsushita"
+      username = "けいたくん"
+    when "kohei.ueta"
+      username = "こーへいくん"
+    when "koichi_ozaki"
+      username = "こーいちさん"
+    when "maikishinbo"
+      username = "まいき"
+    when "ray"
+      username = "レイくん"
+    when "ryoyasekino"
+      username = "りょーやくん"
+    when "shizuka"
+      username = "さくしずたん"
+    when "taikinakane"
+      username = "たいきくん"
+    when "takashi"
+      username = "たかしくん"
+    when "tatsuki.miura"
+      username = "たつきくん"
+    when "tomoki-ninomiya"
+      username = "ともきくん"
+    when "tsugita"
+      username = "としのりくん"
+    when "yamato"
+      username = "やまとくん"
+    when "yuito-sato"
+      username = "ゆいとくん"
+    when "yusuke_yamane"
+      username = "ゆーすけくん"
+    else
+      username = "新人さん"
+
 module.exports = (robot) ->
   # 16:00ブレイクタイム
   btimer1_1 = new cronJob('00 30 15 * * 0-6', () =>
@@ -108,13 +217,20 @@ module.exports = (robot) ->
            'おう、ほんでほんで？',
            'jojiくん、いつもごめんね。本当はあなたの事...',
            'كان حبا من منذ فترة طويلة']
+
+
   robot.hear /done$|準備した/i, (msg) ->
-    username = msg.message.user.name
+    username = get_username(msg.message.user.name)
     if username == "joji-sekiya"
       msg.send msg.random words
+    else if username == "新人さん"
+      msg.send "ありがとう" + username + "！大好き:heartbeat:\n\nあ、ところでまだ私に自己紹介してくれてないよね・・・？\n皆から何て呼ばれてるのー？♡"
     else
-      msg.send "ありがとう" + username + "くん！大好き:heartbeat:"
+      msg.send "ありがとう" + username + "！大好き:heartbeat:"
 
+  robot.respond /@/i, (msg) ->
+    username = msg.message.user.name
+    msg.send "わー！ありがとうー♡" + username + "の事ちょっと気になってきたかも。。。"
 # 0月 1火 2水 3木 4金 5土 6日
   btimer1_1.start()
   btimer1_2.start()
@@ -132,9 +248,6 @@ module.exports = (robot) ->
   remind_music.start()
   end_work.start()
   remind_mentor_fb.start()
-  # robot.respond /PING$/i, (msg) ->
-  #   msg.send "@maikishinbo !!!"
-
 # module.exports = (robot) ->
 #   robot.respond /PING$/i, (msg) ->
 #     msg.send "@maikishinbo!!!"
