@@ -51,6 +51,11 @@ module.exports = (robot) ->
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> *蛍の光を流してください٩(๑′∀ ‵๑)۶•*¨*•.¸¸♪*\nhttp://2.bp.blogspot.com/-hqIThX2BTI4/UAomQKywmHI/AAAAAAAAEAc/Gw9txocS6yI/s1600/%E3%83%9B%E3%82%BF%E3%83%AB%E3%83%8E%E3%83%92%E3%82%AB%E3%83%AA.jpg"
   )
+  # メンターフィードバックリマインド
+  remind_mentor_fb = new cronJob('00 30 22 * * 0-6', () =>
+    envelope = room: "#mentor-contact"
+    robot.send envelope, "<!here> そういえば今日現場を見てこの人のココ良かったなぁとか気をつけた方がいいなぁって思った事とかない？\nもしあったら私に教えてくれると嬉しいなぁ:heartbeat:\n好きになっちゃうかも（笑）"
+  )
   # 終業
   end_work = new cronJob('00 00 23 * * 0-6', () =>
     envelope = room: "#mentor-contact"
@@ -81,17 +86,13 @@ module.exports = (robot) ->
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 本、読んでますか？(๑•́ ₃ •̀๑)本を読む人って凄くカッコいい:heartbeat:"
   )
-  remind_webook2 = new cronJob('00 30 23 * * 5', () =>
+  remind_webook2 = new cronJob('00 00 23 * * 5', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 明日までだけど大丈夫かなぁ？楽しみー！:heartbeat:"
   )
   remind_webook3 = new cronJob('00 00 11 * * 6', () =>
     envelope = room: "#we-book"
     robot.send envelope, "<!channel> 皆の感想文楽しみだなぁ★今日までだからねっ！٩(๑`ȏ´๑)۶:heartbeat:"
-  )
-  remind_mentor_fb = new cronJob('00 30 22 * * 0-6', () =>
-  envelope = room: "#mentor-contact"
-  robot.send envelope, "<!here> そういえば今日現場を見てこの人のココ良かったなぁとか気をつけた方がいいなぁって思った事とかない？\nもしあったら私に教えてくれると嬉しいなぁ:heartbeat:\n好きになっちゃうかも（笑）"
   )
 
   words = ['だまれよフィッシュ！魚でも釣ってろ！',
