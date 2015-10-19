@@ -219,7 +219,7 @@ module.exports = (robot) ->
            'كان حبا من منذ فترة طويلة']
 
 
-  robot.hear /done$|準備した/i, (msg) ->
+  robot.hear /done|準備した/i, (msg) ->
     username = get_username(msg.message.user.name)
     if username == "joji-sekiya"
       msg.send msg.random words
