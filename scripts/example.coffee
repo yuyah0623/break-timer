@@ -231,6 +231,12 @@ module.exports = (robot) ->
   robot.respond /@/i, (msg) ->
     username = get_username(msg.message.user.name)
     msg.send "わー！ありがとうー♡" + username + "の事ちょっと気になってきたかも。。。"
+  robot.hear /休憩/i, (msg) ->
+    username = get_username(msg.message.user.name)
+    msg.send "おつかれさま" + username + ":heartbeat:\nゆっくり休んでね٩(๑′∀ ‵๑)۶•*¨*•.¸¸♪"
+  robot.hear /戻/i, (msg) ->
+    username = get_username(msg.message.user.name)
+    msg.send "おかえり" + username + ":heartbeat:\nまた頑張ろおね！( ･ㅂ･)و ̑̑ "
 # 0月 1火 2水 3木 4金 5土 6日
   btimer1_1.start()
   btimer1_2.start()
