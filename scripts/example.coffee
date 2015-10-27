@@ -170,6 +170,15 @@ module.exports = (robot) ->
     envelope = room: "#mentor-contact"
     robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n明日からも皆で頑張ろう\nhttp://i.imgur.com/hwIXH65.jpg"
   )
+
+  ban_post = new cronJob('00 00 10 * * 0-6', () =>
+    envelope = room: "#random"
+    robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\nお仕事終わるの待ってるから集中して頑張ってね(*˘︶˘*).｡.:*♡"
+  )
+  ban_post_mens = new cronJob('00 00 10 * * 0-6', () =>
+    envelope = room: "#mens-only"
+    robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\n彼女欲しいなら下衆な会話してないで働け童貞野郎共。"
+  )
   # https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53
   # Close Channel
   # close_ios_chat = new cronJob('00 00 23 * * 0-6', () =>
@@ -254,6 +263,8 @@ module.exports = (robot) ->
   remind_music.start()
   end_work.start()
   remind_mentor_fb.start()
+  ban_post.start()
+  ban_post_mens.start()
 # module.exports = (robot) ->
 #   robot.respond /PING$/i, (msg) ->
 #     msg.send "@maikishinbo!!!"
