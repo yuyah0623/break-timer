@@ -171,11 +171,11 @@ module.exports = (robot) ->
     robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n明日からも皆で頑張ろう\nhttp://i.imgur.com/hwIXH65.jpg"
   )
 
-  ban_post = new cronJob('00 00 10 * * 0-6', () =>
+  ban_post = new cronJob('00 00 11 * * 0-6', () =>
     envelope = room: "#random"
     robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\nお仕事終わるの待ってるから集中して頑張ってね(*˘︶˘*).｡.:*♡"
   )
-  ban_post_mens = new cronJob('00 00 10 * * 0-6', () =>
+  ban_post_mens = new cronJob('00 00 11 * * 0-6', () =>
     envelope = room: "#mens-only"
     robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\n彼女欲しいなら下衆な会話してないで働け童貞野郎共。"
   )
@@ -230,7 +230,7 @@ module.exports = (robot) ->
 
   robot.hear /done|準備した/i, (msg) ->
     username = get_username(msg.message.user.name)
-    if username == "joji-sekiya"
+    if username == "魚くん"
       msg.send msg.random words
     else if username == "新人さん"
       msg.send "ありがとう" + username + "！大好き:heartbeat:\n\nあ、ところでまだ私に自己紹介してくれてないよね・・・？\n皆から何て呼ばれてるのー？♡"
