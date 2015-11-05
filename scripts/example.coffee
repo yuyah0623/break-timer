@@ -179,17 +179,6 @@ module.exports = (robot) ->
     envelope = room: "#mens-only"
     robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\n彼女欲しいなら下衆な会話してないで働け童貞野郎共。"
   )
-  # https://gyazo.com/4bee8893d4ccd5030eb641cd00103a53
-  # Close Channel
-  # close_ios_chat = new cronJob('00 00 23 * * 0-6', () =>
-  #   envelope = room: "#_ios_online_support"
-  #   robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:ponchan_bob::two_hearts:"
-  # )
-
-  # close_web_chat = new cronJob('00 00 23 * * 0-6', () =>
-  #   envelope = room: "#_web_online_support"
-  #   robot.send envelope, "/topic 一日お疲れ様♪明日も頑張ろうね:motti_micky: :two_hearts: "
-  # )
 
   remind_exam1 = new cronJob('00 00 11 * * 3', () =>
     envelope = room: "#weekly_exam"
