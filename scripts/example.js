@@ -207,7 +207,7 @@ module.exports = function(robot) {
       return robot.send(envelope, "<!here> そういえば今日現場を見てこの人のココ良かったなぁとか気をつけた方がいいなぁって思った事とかない？\nもしあったら私に教えてくれると嬉しいなぁ:heartbeat:\n好きになっちゃうかも（笑）");
     };
   })(this));
-  remind_water_n_stuff = new cronJob('0 * * * *', (function(_this) {
+  remind_water_n_stuff = new cronJob('0 11-22 * * 0-6', (function(_this) {
     return function() {
       var envelope;
       envelope = {
