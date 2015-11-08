@@ -173,7 +173,7 @@ module.exports = (robot) ->
 
   # 水/ゴミ箱/ブランケットリマインド
   # TODO シフトに入っている人をrandomで1人指定する方式にしたい
-  remind_water_n_stuff = new cronJob('0 11-22 * * * 0-6', () =>
+  remind_water_n_stuff = new cronJob('0 0 11-22 * * 0-6', () =>
     envelope = room: "#techcamp-shibuya"
     robot.send envelope, "<!here> 飲み物無くなってないかな? ブランケット,ゴミ箱 綺麗になってるかな? 確認してくれると嬉しいなあ"
   )
