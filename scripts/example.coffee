@@ -171,6 +171,13 @@ module.exports = (robot) ->
     robot.send envelope, "<!here> みんな、今日も一日おつかれさま:heartbeat:\n明日からも皆で頑張ろう\nhttp://i.imgur.com/hwIXH65.jpg"
   )
 
+  # 水/ゴミ箱/ブランケットリマインド
+  # TODO シフトに入っている人をrandomで1人指定する方式にしたい
+  remind_water_n_stuff = new cronJob('0 * * * * 0-6', () =>
+    envelope = room: "#techcamp-shibuya"
+    robot.send envelope, "<!here> 飲み物無くなってないかな? ブランケット,ゴミ箱 綺麗になってるかな? 確認してくれると嬉しいなあ"
+  )
+
   ban_post = new cronJob('00 00 11 * * 0-6', () =>
     envelope = room: "#random"
     robot.send envelope, "10時から18時まではチャット禁止٩(๑òωó๑)۶\nお仕事終わるの待ってるから集中して頑張ってね(*˘︶˘*).｡.:*♡"
@@ -250,6 +257,7 @@ module.exports = (robot) ->
   remind_webook2.start()
   remind_webook3.start()
   remind_music.start()
+  remind_water_n_stuff()
   end_work.start()
   remind_mentor_fb.start()
   ban_post.start()
