@@ -207,6 +207,15 @@ module.exports = function(robot) {
       return robot.send(envelope, "<!here> そういえば今日現場を見てこの人のココ良かったなぁとか気をつけた方がいいなぁって思った事とかない？\nもしあったら私に教えてくれると嬉しいなぁ:heartbeat:\n好きになっちゃうかも（笑）");
     };
   })(this));
+  remind_water_n_stuff = new cronJob('0 * * * *', (function(_this) {
+    return function() {
+      var envelope;
+      envelope = {
+        room: "#techcamp-shibuya"
+      };
+      return robot.send(envelope, "<!here> 飲み物無くなってないかな？ブランケット,ゴミ箱 綺麗になってるかな？確認してくれると嬉しいなあ :heartbeat:");
+    };
+  })(this));
   end_work = new cronJob('00 00 23 * * 0-6', (function(_this) {
     return function() {
       var envelope;
@@ -323,5 +332,6 @@ module.exports = function(robot) {
   end_work.start();
   remind_mentor_fb.start();
   ban_post.start();
+  remind_water_n_stuff.start();
   return ban_post_mens.start();
 };
