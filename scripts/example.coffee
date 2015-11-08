@@ -257,7 +257,7 @@ module.exports = (robot) ->
   remind_webook2.start()
   remind_webook3.start()
   remind_music.start()
-  remind_water_n_stuff()
+  remind_water_n_stuff.start()
   end_work.start()
   remind_mentor_fb.start()
   ban_post.start()
